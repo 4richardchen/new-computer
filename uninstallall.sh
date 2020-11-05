@@ -12,7 +12,7 @@ fi
 
 if ! $CONTINUE; then
   # Check if we're continuing and output a message if not
-  cecho "Please go read the script, it only takes a few minutes" $red
+  echo "Please go read the script, it only takes a few minutes" $red
   exit
 fi
 
@@ -46,7 +46,7 @@ if ! ls -1 /Volumes/*/ | grep USB | wc -l &> 2
 then
     #todo: if drive capacity enough
     mv -rf ~/.ssh /Volumes/USB\ DISK
-    mv -r ~/Documents ~/Library/Mobile\ Documents/com~apple~CloudDocs/
+    mv -rf ~/.gnupg /Volumes/USB\ DISK
     mv -r ~/Documents /Volumes/USB\ DISK
     mv -r ~/Dropbox /Volumes/USB\ DISK
 fi
