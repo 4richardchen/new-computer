@@ -16,8 +16,8 @@ Todo list:
 ## Install from script:
 ```sh
 #from https://techpulsetoday.com/how-to-execute-a-bash-script-from-github-gist/
-sudo bash <(curl -s https://raw.githubusercontent.com/4richardchen/new-computer/master/uninstallall.sh)
+sudo bash <(curl -s https://raw.githubusercontent.com/4richardchen/new-computer/fired/uninstallall.sh)
 
 #from https://rasa.com/docs/rasa-x/0.28.6/installation-and-setup/one-line-deploy-script/
-curl -s https://raw.githubusercontent.com/4richardchen/new-computer/master/uninstallall.sh | sudo bash
+curl -s https://raw.githubusercontent.com/4richardchen/new-computer/fired/uninstallall.sh | sudo bash
 ```
