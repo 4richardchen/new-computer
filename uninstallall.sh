@@ -14,6 +14,8 @@ if ! $CONTINUE; then
   # Check if we're continuing and output a message if not
   echo "Please go read the script, it only takes a few minutes" $red
   exit
+else
+  echo "Cancelled."
 fi
 
 # Here we go ...
@@ -36,9 +38,11 @@ rm -rf ~/Library/Google
 #if iCloud installed
 if ! ls -1 ~/Library/*/ | grep Mobile | wc -l &> 1
 then
-    #todo: if not already cloud drived
     mv -rf ~/.ssh ~/Library/Mobile\ Documents/com~apple~CloudDocs/
-    mv -r ~/Documents ~/Library/Mobile\ Documents/com~apple~CloudDocs/
+    mv -rf ~/.gnupg ~/Library/Mobile\ Documents/com~apple~CloudDocs/
+    mv -r ~/Documents ~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents
+else
+    echo "No iCloud Drive."
 fi
 
 #https://apple.stackexchange.com/questions/60231/using-terminal-how-can-i-find-which-directory-is-my-usb-drive-mounted-in
@@ -49,6 +53,8 @@ then
     mv -rf ~/.gnupg /Volumes/USB\ DISK
     mv -r ~/Documents /Volumes/USB\ DISK
     mv -r ~/Dropbox /Volumes/USB\ DISK
+else
+    echo "No USB Drive."
 fi
 
 #if neither destination exists
@@ -63,6 +69,8 @@ then
     dropbox stop
     mv ~/.dropbox /tmp
     exit
+else
+    echo "No dropbox."
 fi
 
 #prank git
