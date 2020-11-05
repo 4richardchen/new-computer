@@ -26,7 +26,7 @@ brew list -1 | xargs brew rm
 
 #uninstall homebrew
 #https://github.com/Homebrew/install
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh)"
+echo "y" | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh)"
 
 #purge Chrome logins
 #https://crunchify.com/how-to-purge-all-your-google-chrome-user-data-on-mac-os-x/
