@@ -4,7 +4,7 @@ My personal script to uninstall an old computer.
 
 It does an extremely opinionated and highly personalized uninstallation, with my preferences. Please adjust as needed!
 
-It arose from this [original inspiration](https://github.com/18F/laptop). It could be called a wipe script or a leave work (fired, terminated, laid off, discharged, etc.) script. It should take lessons from other such scripts, though I found none. Its spirit for leaving a job should be to ensure user privacy. It may purposefully, superfluously, jealously protect privacy.
+It arose from this [original inspiration](https://github.com/18F/laptop). Is there a good term for this type of script? Submit a pull request if so. This could be called a wipe script or a leave work (fired, terminated, laid off, discharged, etc.) script or an uninstallAll script or a pre-reformat script which clears all personal data. It should take lessons from other such scripts, though I found none. Its spirit for leaving a job should be to ensure user privacy. It may purposefully, superfluously, jealously protect privacy.
 
 Todo list:
 * make a marketing site, likely in github-pages
