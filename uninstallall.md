@@ -10,7 +10,7 @@ Todo list:
 * make a marketing site, likely in github-pages
   * if HTTP_REFER is curl, return the script not the marketing site
 * Windows version
-  * in [Chocolatey](https://chocolatey.org/packages?q=scripting
+  * in [Chocolatey](https://chocolatey.org/packages?q=scripting)
   * in [Power Shell](https://docs.microsoft.com/en-us/powershell/scripting/learn/remoting/running-remote-commands?view=powershell-7)
 
 ## Install from script:
