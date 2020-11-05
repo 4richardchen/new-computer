@@ -109,6 +109,9 @@ if test -f "$FILE"; then
     rm -rf ~/Library/Application\ Support/Sublime\ Text\ 3/Local/Session.sublime_session
 fi
 
+#change password
+passwd
+
 #delete evidence
 rm ~/.bash_history
 
