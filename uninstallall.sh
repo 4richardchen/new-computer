@@ -36,7 +36,7 @@ rm -rf ~/Library/Google
 
 #take your files with you
 #if iCloud installed
-if ! ls -1 ~/Library/*/ | grep Mobile | wc -l &> 1
+if ! ls -1 ~/Library/*/ | grep Mobile | wc -l &> 0
 then
     mv -rf ~/.ssh ~/Library/Mobile\ Documents/com~apple~CloudDocs/
     mv -rf ~/.gnupg ~/Library/Mobile\ Documents/com~apple~CloudDocs/
