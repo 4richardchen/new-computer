@@ -30,7 +30,7 @@ brew list -1 | xargs brew rm
 
 #purge Chrome logins
 #https://crunchify.com/how-to-purge-all-your-google-chrome-user-data-on-mac-os-x/
-rm -rf ~/Library/Application Support/Chrome
+rm -rf ~/Library/Application\ Support/Chrome
 rm -rf ~/Library/Caches/com.google.*
 rm -rf ~/Library/Google
 
@@ -106,7 +106,7 @@ defaults delete MobileMeAccounts
 #cleanup SublimeText unsaved text
 FILE=/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl
 if test -f "$FILE"; then
-    rm -rf ~/Library/Application Support/Sublime Text 3/Local/Session.sublime_session
+    rm -rf ~/Library/Application\ Support/Sublime\ Text\ 3/Local/Session.sublime_session
 fi
 
 #delete evidence
