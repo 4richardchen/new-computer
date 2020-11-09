@@ -43,11 +43,11 @@ fi
 
 # Here we go ...
 
-#uninstall homebrew packages
+#uninstall homebrew packages to remove software used
 #https://darryldias.me/2016/remove-all-installed-homebrew-packages/
 brew list -1 | xargs brew rm
 
-#uninstall homebrew
+#uninstall homebrew itself
 #https://github.com/Homebrew/install
 echo "y" | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh)"
 
@@ -96,7 +96,7 @@ else
     echo "No dropbox."
 fi
 
-#prank git
+#prank git but don't uninstall git as is unnecessary
 if ! git -v &> /dev/null
 then
     git config --global user.email "abuse@comcast.net"
@@ -138,6 +138,6 @@ passwd
 #delete evidence
 rm ~/.bash_history
 
-#shut down so you can pack
+#shut down, pack up
 #https://osxdaily.com/2017/08/13/shutdown-mac-command-line/
 sudo shutdown -h now
