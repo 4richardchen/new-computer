@@ -1,10 +1,33 @@
 #!/bin/sh
 
+# Colorize
+
+# Set the colours you can use
+black=$(tput setaf 0)
+red=$(tput setaf 1)
+green=$(tput setaf 2)
+yellow=$(tput setaf 3)
+blue=$(tput setaf 4)
+magenta=$(tput setaf 5)
+cyan=$(tput setaf 6)
+white=$(tput setaf 7)
+
+# Resets the style
+reset=`tput sgr0`
+
+# Color-echo. Improved. [Thanks @joaocunha]
+# arg $1 = message
+# arg $2 = Color
+cecho() {
+  echo "${2}${1}${reset}"
+  return
+}
+
 # Set continue to false by default.
 CONTINUE=false
 
 echo ""
-cecho "Uninstall your computer? (y/n)" $red
+cecho "Wipe your computer? (y/n)" $green
 read -r response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   CONTINUE=true
@@ -12,7 +35,7 @@ fi
 
 if ! $CONTINUE; then
   # Check if we're continuing and output a message if not
-  echo "Please go read the script, it only takes a few minutes" $red
+  cecho "Read the script, it only takes a few minutes" $red
   exit
 else
   echo "Cancelled."
