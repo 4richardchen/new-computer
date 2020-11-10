@@ -425,6 +425,9 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 # Use function F1, F, etc keys as standard function keys
 defaults write NSGlobalDomain com.apple.keyboard.fnState -bool true
 
+# Configure git
+git config --global user.email "$useremail"
+git config --global user.name "$ghusername"
 
 ###############################################################################
 # Screenshots / Screen                                                        #
