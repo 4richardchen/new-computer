@@ -148,6 +148,8 @@ for ((i=0; i<retries; i++)); do
 			echo "Something went wrong. Enter your credentials and try again..."
      		echo -n "Status code returned: "
      		echo $gh_status_code
+     		pbcopy < ~/.ssh/id_ed25519.pub
+     		open https://github.com/settings/keys
       fi
 done
 
