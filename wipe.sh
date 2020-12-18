@@ -43,11 +43,11 @@ fi
 
 # Here we go ...
 
-#uninstall homebrew packages to remove software used
+#uninstall homebrew packages 
 #https://darryldias.me/2016/remove-all-installed-homebrew-packages/
 brew list -1 | xargs brew rm
 
-#uninstall homebrew itself
+#uninstall homebrew
 #https://github.com/Homebrew/install
 echo "y" | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh)"
 
@@ -69,7 +69,7 @@ else
 fi
 
 #https://apple.stackexchange.com/questions/60231/using-terminal-how-can-i-find-which-directory-is-my-usb-drive-mounted-in
-if ! ls -1 /Volumes/*/ | grep USB | wc -l &> 2
+if ! ls -1 /Volumes/*/ | grep USB\ DISK | wc -l &> 2
 then
     #todo: if drive capacity enough
     mv -rf ~/.ssh /Volumes/USB\ DISK
@@ -80,23 +80,24 @@ else
     echo "No USB Drive."
 fi
 
-#if neither destination exists
+#take it all out
 rm -rf ~/Documents
 rm -rf ~/Pictures
 rm -rf ~/Downloads
+rm -rf ~/Public
 
 #end dropbox
 #https://askubuntu.com/questions/996301/unlink-dropbox-account-from-command-line
 if ! dropbox -v COMMAND &> /dev/null
 then
     dropbox stop
-    mv ~/.dropbox /tmp
+    rm -rf ~/.dropbox
     exit
 else
     echo "No dropbox."
 fi
 
-#prank git but don't uninstall git as is unnecessary
+#prank git but don't uninstall git as already deleted keys
 if ! git -v &> /dev/null
 then
     git config --global user.email "abuse@comcast.net"
@@ -135,8 +136,8 @@ fi
 #change password
 passwd
 
-#delete evidence
-rm ~/.bash_history
+#delete command history
+rm ~/.*h_history
 
 #shut down, pack up
 #https://osxdaily.com/2017/08/13/shutdown-mac-command-line/
