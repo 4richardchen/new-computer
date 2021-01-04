@@ -57,6 +57,9 @@ rm -rf ~/Library/Application\ Support/Chrome
 rm -rf ~/Library/Caches/com.google.*
 rm -rf ~/Library/Google
 
+#erase others' identities before taking
+git filter-branch -f --env-filter "GIT_AUTHOR_NAME='Richard Chen'; GIT_AUTHOR_EMAIL='email'; GIT_COMMITTER_NAME='Richard Chen'; GIT_COMMITTER_EMAIL='email';FILTER_BRANCH_SQUELCH_WARNING=1;" HEAD;
+
 #take your files with you
 #if iCloud installed
 if ! ls -1 ~/Library/*/ | grep Mobile | wc -l &> 0
