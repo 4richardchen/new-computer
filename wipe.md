@@ -10,16 +10,18 @@ It arose from this [original inspiration](https://github.com/18F/laptop). Is the
 
 Todo list:
 * flag to step-by-step proceed
-* make a marketing site, likely in github-pages
-  * if HTTP_REFER is curl, return the script not the marketing site
+  * privacy levels from simple to advance, from casual to paranoid
+    * personas
+* marketing site on github-pages
 * Windows version
   * in [Chocolatey](https://chocolatey.org/packages?q=scripting)
   * in [Power Shell](https://docs.microsoft.com/en-us/powershell/scripting/learn/remoting/running-remote-commands?view=powershell-7)
+* 8-way overwrite
 
 ## Install from script:
 ```sh
 #from https://techpulsetoday.com/how-to-execute-a-bash-script-from-github-gist/
-sudo bash <(curl -s https://raw.githubusercontent.com/4richardchen/new-computer/fired/uninstallall.sh)
+sudo bash <(curl -s https://raw.githubusercontent.com/4richardchen/new-computer/fired/wipe.sh)
 
 #from https://rasa.com/docs/rasa-x/0.28.6/installation-and-setup/one-line-deploy-script/
 curl -s https://raw.githubusercontent.com/4richardchen/new-computer/fired/uninstallall.sh | sudo bash
