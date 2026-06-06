@@ -43,7 +43,10 @@ fi
 
 # Here we go ...
 
-#uninstall homebrew packages 
+#quick, regular deletes
+rm -rf ~/Downloads/del ~/Downloads/*
+
+#uninstall homebrew packages
 #https://darryldias.me/2016/remove-all-installed-homebrew-packages/
 brew list -1 | xargs brew rm
 
@@ -51,14 +54,18 @@ brew list -1 | xargs brew rm
 #https://github.com/Homebrew/install
 echo "y" | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh)"
 
-#purge Chrome logins
-#https://crunchify.com/how-to-purge-all-your-google-chrome-user-data-on-mac-os-x/
-rm -rf ~/Library/Application\ Support/Chrome
-rm -rf ~/Library/Caches/com.google.*
-rm -rf ~/Library/Google
+#git identity
+##git filter-branch -f --env-filter "GIT_AUTHOR_NAME='Richard Chen'; GIT_AUTHOR_EMAIL='email'; GIT_COMMITTER_NAME='Richard Chen'; GIT_COMMITTER_EMAIL='email';FILTER_BRANCH_SQUELCH_WARNING=1;" HEAD;
 
-#erase others' identities before taking
-git filter-branch -f --env-filter "GIT_AUTHOR_NAME='Richard Chen'; GIT_AUTHOR_EMAIL='email'; GIT_COMMITTER_NAME='Richard Chen'; GIT_COMMITTER_EMAIL='email';FILTER_BRANCH_SQUELCH_WARNING=1;" HEAD;
+#VSC identity
+##
+
+#wipe git but don't uninstall git as already deleted keys
+if ! git -v &> /dev/null
+then
+    git config --global user.email "abuse@comcast.net"
+    git config --global user.name ""
+fi
 
 #take your files with you
 #if iCloud installed
@@ -83,11 +90,10 @@ else
     echo "No USB Drive."
 fi
 
-#take it all out
-rm -rf ~/Documents
-rm -rf ~/Pictures
-rm -rf ~/Downloads
-rm -rf ~/Public
+#remove local files, remote files
+rm -rf ~/Documents ~/Pictures ~/Public ~/* ##
+
+#all in Downloads
 
 #end dropbox
 #https://askubuntu.com/questions/996301/unlink-dropbox-account-from-command-line
@@ -100,17 +106,14 @@ else
     echo "No dropbox."
 fi
 
-#prank git but don't uninstall git as already deleted keys
-if ! git -v &> /dev/null
-then
-    git config --global user.email "abuse@comcast.net"
-    git config --global user.name ""
-fi
+#Chrome
+#https://crunchify.com/how-to-purge-all-your-google-chrome-user-data-on-mac-os-x/
+rm -rf ~/Library/Application\ Support/Chrome ~/Library/Caches/com.google.* ~/Library/Google
 
-#reset Safari
+#Safari
 #https://apple.stackexchange.com/questions/144311/reset-safari-from-command-line
 #https://pcmac.biz/reset-safari-without-opening/
-mv ~/Library/Safari ~/Desktop/Safari-`date +%Y%m%d%H%M%S`
+##rm mv ~/Library/Safari ~/Desktop/Safari-`date +%Y%m%d%H%M%S`
 rm -Rf ~/Library/Caches/Apple\ -\ Safari\ -\ Safari\ Extensions\ Gallery
 rm -Rf ~/Library/Caches/Metadata/Safari
 rm -Rf ~/Library/Caches/com.apple.Safari
@@ -139,9 +142,11 @@ fi
 #change password
 passwd
 
-#delete command history
-rm ~/.*h_history
+#command history
+#ssh identity
+#clear house, empty trash, os waste
+rm -rf ~/.*history ~/Library/Caches/* /var/log/* ~/.Trash/*
 
-#shut down, pack up
+#shut down
 #https://osxdaily.com/2017/08/13/shutdown-mac-command-line/
 sudo shutdown -h now
