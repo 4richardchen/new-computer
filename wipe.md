@@ -2,7 +2,7 @@
 
 My personal script to uninstall an old computer.
 
-It does an extremely opinionated and highly personalized uninstallation, with my preferences. Please adjust as needed. Project is part of my [business](https://richardchencom.wordpress.com/) thus altruistic and intentionally shared for public consumption and contribution.
+It does an extremely opinionated and highly personalized uninstallation, with my preferences. Please adjust as needed. Project is part of my [business](https://richardchen.com) and intentionally shared for public consumption and contribution.
 
 Goal is to remove all personal matter so the machine is ready to return to an employer or repairman. Not everything is uninstalled as in if not important to privacy. I prize privacy over security over thoroughness.
 
